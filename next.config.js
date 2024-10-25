@@ -1,6 +1,9 @@
 module.exports = {
   swcMinify: true,
   trailingSlash: true,
+  env: {
+    WALLETCONNECT_PROJECT_ID: process.env.WALLETCONNECT_PROJECT_ID,
+  },
   images: {
     remotePatterns: [
       {
