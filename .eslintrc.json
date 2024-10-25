@@ -1,3 +1,65 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "no-loops",
+    "react",
+    "prettier",
+    "import",
+    "no-relative-import-paths"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-loops/no-loops": 2,
+    "no-console": 1,
+    "prettier/prettier": 2,
+    "react-hooks/exhaustive-deps": 2,
+    "import/order": [
+      2,
+      {
+        "groups": [
+          ["external", "builtin"],
+          ["internal", "parent", "sibling", "index", "object"],
+          ["type"]
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "no-relative-import-paths/no-relative-import-paths": [
+      2,
+      {
+        "allowSameFolder": false,
+        "prefix": "~"
+      }
+    ]
+  }
 }
