@@ -3,6 +3,7 @@
 import React from 'react'
 
 import { ConnectButton } from '@rainbow-me/rainbowkit'
+import Link from 'next/link'
 import { useAccount } from 'wagmi'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
@@ -26,16 +27,41 @@ export default function Home() {
 
 const LandingPage = () => {
   return (
-    <main className="flex flex-col items-center space-y-4 sm:items-start">
+    <div className="flex flex-col items-center space-y-4 sm:items-start">
       <div className="text-xl">Splits Lite</div>
       <div className="text-md">
         A minimal app for creating and distributing Splits. Connect your wallet
         to continue.
       </div>
-    </main>
+    </div>
   )
 }
 
 const ConnectedPage = () => {
+  const { chain } = useAccount()
+
+  if (!chain) return <UnsupportedNetwork />
+
   return <div>You are connected!</div>
+}
+
+const UnsupportedNetwork = () => {
+  return (
+    <div className="flex flex-col items-center space-y-4 sm:items-start">
+      <div className="text-xl">This chain isn&apos;t supported.</div>
+      <div className="text-md">
+        <Link
+          href="https://docs.splits.org"
+          target="_blank"
+          className="text-blue-400 underline hover:text-blue-700"
+        >
+          Here
+        </Link>{' '}
+        is a list of supported chains
+      </div>
+      <div className="text-md">
+        Email us at support@splits.org to request support for a new chain.
+      </div>
+    </div>
+  )
 }
