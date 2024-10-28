@@ -4,6 +4,7 @@ import '@rainbow-me/rainbowkit/styles.css'
 
 import React, { ReactNode, Suspense } from 'react'
 
+import { SplitsProvider } from '@0xsplits/splits-sdk-react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
@@ -11,6 +12,8 @@ import {
   RainbowProvider,
   WagmiProviderWrapper,
 } from '~/context/externalContext'
+
+import '@0xsplits/splits-kit/dist/styles.css'
 
 const queryClient = new QueryClient()
 
@@ -24,7 +27,9 @@ export default function App({
       <QueryClientProvider client={queryClient}>
         <WagmiProviderWrapper>
           <RainbowProvider>
-            <AppContainer>{children}</AppContainer>
+            <SplitsProvider>
+              <AppContainer>{children}</AppContainer>
+            </SplitsProvider>
           </RainbowProvider>
         </WagmiProviderWrapper>
       </QueryClientProvider>

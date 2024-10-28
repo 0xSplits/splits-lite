@@ -2,9 +2,12 @@
 
 import React from 'react'
 
+import { CreateSplit } from '@0xsplits/splits-kit'
+import { useSplitsClient } from '@0xsplits/splits-sdk-react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import Link from 'next/link'
-import { useAccount } from 'wagmi'
+import { zeroAddress } from 'viem'
+import { useAccount, usePublicClient, useWalletClient } from 'wagmi'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
 import { Tabs, TabsContent } from '~/components/ui/tabs'
@@ -39,9 +42,13 @@ const LandingPage = () => {
 }
 
 const ConnectedPage = () => {
-  const { chain } = useAccount()
+  const { chain, chainId } = useAccount()
+  const publicClient = usePublicClient()
+  const { data: walletClient } = useWalletClient()
 
-  if (!chain) return <UnsupportedNetwork />
+  useSplitsClient({ chainId: chainId ?? 1, publicClient, walletClient })
+
+  if (!chain || !chainId) return <UnsupportedNetwork />
 
   return (
     <Tabs
@@ -52,7 +59,22 @@ const ConnectedPage = () => {
       ]}
     >
       <TabsContent value="create">
-        <div>Creating a split</div>
+        <CreateSplit
+          chainId={chainId}
+          type={'v2Push'}
+          defaultOwner={zeroAddress}
+          defaultDistributorFeeOptions={[]}
+          linkToApp={false}
+          supportsEns={false}
+          width={'xl'}
+          onError={(error) => {
+            // eslint-disable-next-line no-console
+            console.error(error)
+          }}
+          onSuccess={() => {
+            // TODO: go to search/view split once we get address back
+          }}
+        />
       </TabsContent>
       <TabsContent value="search">
         <div>Searching splits</div>
