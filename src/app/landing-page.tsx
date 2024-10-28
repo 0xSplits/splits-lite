@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useAccount } from 'wagmi'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
+import { Tabs, TabsContent } from '~/components/ui/tabs'
 
 export default function Home() {
   const { address, isConnecting } = useAccount()
@@ -41,6 +42,23 @@ const ConnectedPage = () => {
   const { chain } = useAccount()
 
   if (!chain) return <UnsupportedNetwork />
+
+  return (
+    <Tabs
+      defaultValue="create"
+      options={[
+        { value: 'create', display: 'Create' },
+        { value: 'search', display: 'Search' },
+      ]}
+    >
+      <TabsContent value="create">
+        <div>Creating a split</div>
+      </TabsContent>
+      <TabsContent value="search">
+        <div>Searching splits</div>
+      </TabsContent>
+    </Tabs>
+  )
 
   return <div>You are connected!</div>
 }
