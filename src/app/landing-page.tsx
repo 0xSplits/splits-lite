@@ -1,12 +1,14 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { CreateSplit } from '@0xsplits/splits-kit'
+import { AddressInput } from '@0xsplits/splits-kit/inputs'
 import { useSplitsClient } from '@0xsplits/splits-sdk-react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import Link from 'next/link'
-import { zeroAddress } from 'viem'
+import { useForm } from 'react-hook-form'
+import { isAddress, zeroAddress } from 'viem'
 import { useAccount, usePublicClient, useWalletClient } from 'wagmi'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
@@ -77,12 +79,50 @@ const ConnectedPage = () => {
         />
       </TabsContent>
       <TabsContent value="search">
-        <div>Searching splits</div>
+        <SearchSplit />
       </TabsContent>
     </Tabs>
   )
 
   return <div>You are connected!</div>
+}
+
+const SearchSplit = () => {
+  const { control, watch, setValue, setError } = useForm<{
+    address: string
+  }>({
+    mode: 'onChange',
+    defaultValues: {
+      address: '',
+    },
+  })
+
+  const splitAddress = watch('address')
+  useEffect(() => {
+    if (splitAddress && isAddress(splitAddress)) {
+      // TODO: search/display split
+    }
+  }, [splitAddress])
+
+  const isAddressValid = (address: string) => {
+    if (!address) return 'Required'
+    return isAddress(address) || 'Invalid address'
+  }
+
+  return (
+    <form style={{ width: '36rem' }}>
+      <AddressInput
+        control={control}
+        inputName={'address'}
+        placeholder={'0x'}
+        setValue={setValue}
+        setError={setError}
+        validationFunc={isAddressValid}
+        autoFocus={true}
+        supportsEns={false}
+      />
+    </form>
+  )
 }
 
 const UnsupportedNetwork = () => {

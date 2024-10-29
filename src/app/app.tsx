@@ -13,7 +13,7 @@ import {
   WagmiProviderWrapper,
 } from '~/context/externalContext'
 
-import '@0xsplits/splits-kit/dist/styles.css'
+import '@0xsplits/splits-kit/styles.css'
 
 const queryClient = new QueryClient()
 
