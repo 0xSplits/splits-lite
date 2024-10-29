@@ -88,6 +88,7 @@ const ConnectedPage = () => {
 }
 
 const SearchSplit = () => {
+  const { chain } = useAccount()
   const { control, watch, setValue, setError } = useForm<{
     address: string
   }>({
@@ -111,6 +112,7 @@ const SearchSplit = () => {
 
   return (
     <form style={{ width: '36rem' }}>
+      <label>Split address on {chain?.name}</label>
       <AddressInput
         control={control}
         inputName={'address'}
