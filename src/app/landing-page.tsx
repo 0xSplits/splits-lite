@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 
-import { CreateSplit } from '@0xsplits/splits-kit'
+import { CreateSplit, DisplaySplit } from '@0xsplits/splits-kit'
 import { AddressInput } from '@0xsplits/splits-kit/inputs'
 import { useSplitsClient } from '@0xsplits/splits-sdk-react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
@@ -88,7 +88,7 @@ const ConnectedPage = () => {
 }
 
 const SearchSplit = () => {
-  const { chain } = useAccount()
+  const { chain, chainId } = useAccount()
   const { control, watch, setValue, setError } = useForm<{
     address: string
   }>({
@@ -99,11 +99,6 @@ const SearchSplit = () => {
   })
 
   const splitAddress = watch('address')
-  useEffect(() => {
-    if (splitAddress && isAddress(splitAddress)) {
-      // TODO: search/display split
-    }
-  }, [splitAddress])
 
   const isAddressValid = (address: string) => {
     if (!address) return 'Required'
@@ -112,17 +107,34 @@ const SearchSplit = () => {
 
   return (
     <form style={{ width: '36rem' }}>
-      <label>Split address on {chain?.name}</label>
-      <AddressInput
-        control={control}
-        inputName={'address'}
-        placeholder={'0x'}
-        setValue={setValue}
-        setError={setError}
-        validationFunc={isAddressValid}
-        autoFocus={true}
-        supportsEns={false}
-      />
+      <div className="flex flex-col space-y-4">
+        <div className="w-full">
+          <label>Split address on {chain?.name}</label>
+          <AddressInput
+            control={control}
+            inputName={'address'}
+            placeholder={'0x'}
+            setValue={setValue}
+            setError={setError}
+            validationFunc={isAddressValid}
+            autoFocus={true}
+            supportsEns={false}
+          />
+        </div>
+        {isAddress(splitAddress) && (
+          <DisplaySplit
+            chainId={chainId!}
+            address={splitAddress}
+            displayBalances={true}
+            displayChain={false}
+            linkToApp={false}
+            options={{
+              requireDataClient: false,
+            }}
+            width={'xl'}
+          />
+        )}
+      </div>
     </form>
   )
 }
