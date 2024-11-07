@@ -9,11 +9,8 @@ importers:
   .:
     dependencies:
       '@0xsplits/splits-kit':
-        specifier: 1.0.0-alpha.3.15
-        version: 1.0.0-alpha.3.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))(wagmi@2.12.25(@tanstack/query-core@5.59.16)(@tanstack/react-query@5.59.16(react@18.3.1))(@types/react@17.0.83)(bufferutil@4.0.8)(react-dom@18.3.1(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@17.0.83)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10)))
-      '@0xsplits/splits-sdk-react':
-        specifier: 2.2.0-alpha.7
-        version: 2.2.0-alpha.7(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
+        specifier: 1.0.0-alpha.12
+        version: 1.0.0-alpha.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))(wagmi@2.12.25(@tanstack/query-core@5.59.16)(@tanstack/react-query@5.59.16(react@18.3.1))(@types/react@17.0.83)(bufferutil@4.0.8)(react-dom@18.3.1(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@17.0.83)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10)))
       '@radix-ui/react-tabs':
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@18.3.1)(@types/react@17.0.83)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -128,16 +125,16 @@ packages:
       graphql:
         optional: true
 
-  '@0xsplits/splits-kit@1.0.0-alpha.3.15':
-    resolution: {integrity: sha512-8A0O99UW3oiP+ERr7JphyFgFY1DLUeZy2kyvoYaOIKNfppwOGK58KlMm4S7XgbCDseaXGFxArvtSilnu6dkxSA==}
+  '@0xsplits/splits-kit@1.0.0-alpha.12':
+    resolution: {integrity: sha512-cYBkaxa5zwf63Z4kJlsohy7iRrbzf9FMrL0iSOu6wyTFbIjOUYUL4ZzAgkkVgHfxVo2gbnLzFvlEjC+CuV3yng==}
     peerDependencies:
       react: 17.x.x || 18.x.x
       react-dom: 17.x.x || 18.x.x
       viem: 2.x.x
       wagmi: 2.x.x
 
-  '@0xsplits/splits-sdk-react@2.2.0-alpha.7':
-    resolution: {integrity: sha512-habD6qReqI5EwED2hER0EpwKJTKZLd4i/hbX9lfAACiwuyQkjTHLdalEzcI/BERHGr2Md59FCQT2t/AMrGmaEQ==}
+  '@0xsplits/splits-sdk-react@2.2.0-alpha.17':
+    resolution: {integrity: sha512-6nhoNnbOARot88eZuDqNzXBaAjucgG9zknq8tdlJeej4aRElQPZPIMauVXOV9CQuYI9lSIgNlBKzOv2RPQZtLg==}
     peerDependencies:
       react: 17.x.x || 18.x.x
       viem: ^1.0.0 || ^2.0.0
@@ -145,8 +142,8 @@ packages:
       viem:
         optional: true
 
-  '@0xsplits/splits-sdk@4.2.0-alpha.5':
-    resolution: {integrity: sha512-cWji39Uv9nozuN1M9l7ffsHoMCLuCDJ+lBJJ3nhdXlarl/4V5rEgBCfaMdwVwLOmLR2+vpnA2Hn8RhLucLL1Hw==}
+  '@0xsplits/splits-sdk@4.2.0-alpha.13':
+    resolution: {integrity: sha512-/MOVptb6arn8UMSUhwFUYfMfjuiv82aqHTPxplkg9wl4TvakGjo2xyZMLcWpxiOQlGWpR+sCeI/bQ3T6JuNzxA==}
     peerDependencies:
       viem: ^1.0.0 || ^2.0.0
     peerDependenciesMeta:
@@ -5008,10 +5005,10 @@ snapshots:
     optionalDependencies:
       graphql: 16.9.0
 
-  '@0xsplits/splits-kit@1.0.0-alpha.3.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))(wagmi@2.12.25(@tanstack/query-core@5.59.16)(@tanstack/react-query@5.59.16(react@18.3.1))(@types/react@17.0.83)(bufferutil@4.0.8)(react-dom@18.3.1(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@17.0.83)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10)))':
+  '@0xsplits/splits-kit@1.0.0-alpha.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))(wagmi@2.12.25(@tanstack/query-core@5.59.16)(@tanstack/react-query@5.59.16(react@18.3.1))(@types/react@17.0.83)(bufferutil@4.0.8)(react-dom@18.3.1(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@17.0.83)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10)))':
     dependencies:
-      '@0xsplits/splits-sdk': 4.2.0-alpha.5(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
-      '@0xsplits/splits-sdk-react': 2.2.0-alpha.7(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
+      '@0xsplits/splits-sdk': 4.2.0-alpha.13(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
+      '@0xsplits/splits-sdk-react': 2.2.0-alpha.17(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
       '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@heroicons/react': 2.1.5(react@18.3.1)
       '@hookform/error-message': 2.0.1(react-dom@18.3.1(react@18.3.1))(react-hook-form@7.53.1(react@18.3.1))(react@18.3.1)
@@ -5027,14 +5024,14 @@ snapshots:
       viem: 2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10)
       wagmi: 2.12.25(@tanstack/query-core@5.59.16)(@tanstack/react-query@5.59.16(react@18.3.1))(@types/react@17.0.83)(bufferutil@4.0.8)(react-dom@18.3.1(react@18.3.1))(react-native@0.76.0(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@17.0.83)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
 
-  '@0xsplits/splits-sdk-react@2.2.0-alpha.7(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))':
+  '@0xsplits/splits-sdk-react@2.2.0-alpha.17(react@18.3.1)(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))':
     dependencies:
-      '@0xsplits/splits-sdk': 4.2.0-alpha.5(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
+      '@0xsplits/splits-sdk': 4.2.0-alpha.13(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
       react: 18.3.1
     optionalDependencies:
       viem: 2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10)
 
-  '@0xsplits/splits-sdk@4.2.0-alpha.5(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))':
+  '@0xsplits/splits-sdk@4.2.0-alpha.13(viem@2.21.35(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))':
     dependencies:
       '@urql/core': 4.3.0(graphql@16.9.0)
       base-64: 1.0.0

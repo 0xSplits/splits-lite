@@ -2,9 +2,12 @@
 
 import React from 'react'
 
-import { CreateSplit, DisplaySplit } from '@0xsplits/splits-kit'
+import {
+  CreateSplit,
+  DisplaySplit,
+  useSplitsClient,
+} from '@0xsplits/splits-kit'
 import { AddressInput } from '@0xsplits/splits-kit/inputs'
-import { useSplitsClient } from '@0xsplits/splits-sdk-react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
@@ -128,6 +131,7 @@ const SearchSplit = () => {
             displayBalances={true}
             displayChain={false}
             linkToApp={false}
+            shouldWithdrawOnDistribute={true}
             options={{
               requireDataClient: false,
             }}
