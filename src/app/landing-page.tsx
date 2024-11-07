@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 
 import {
   CreateSplit,
@@ -10,7 +10,12 @@ import {
 import { AddressInput } from '@0xsplits/splits-kit/inputs'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import Link from 'next/link'
-import { useForm } from 'react-hook-form'
+import {
+  Control,
+  useForm,
+  UseFormSetError,
+  UseFormSetValue,
+} from 'react-hook-form'
 import { isAddress, zeroAddress } from 'viem'
 import { useAccount, usePublicClient, useWalletClient } from 'wagmi'
 
@@ -46,10 +51,27 @@ const LandingPage = () => {
   )
 }
 
+type SearchSplitForm = {
+  address: string
+}
+
 const ConnectedPage = () => {
   const { chain, chainId } = useAccount()
   const publicClient = usePublicClient()
   const { data: walletClient } = useWalletClient()
+
+  const [tab, setTab] = useState('create')
+  const onTabChange = (value: string) => {
+    setTab(value)
+  }
+
+  const { control, watch, setValue, setError } = useForm<SearchSplitForm>({
+    mode: 'onChange',
+    defaultValues: {
+      address: '',
+    },
+  })
+  const searchSplitAddress = watch('address')
 
   useSplitsClient({ chainId: chainId ?? 1, publicClient, walletClient })
 
@@ -57,6 +79,8 @@ const ConnectedPage = () => {
 
   return (
     <Tabs
+      value={tab}
+      onValueChange={onTabChange}
       defaultValue="create"
       options={[
         { value: 'create', display: 'Create' },
@@ -72,17 +96,20 @@ const ConnectedPage = () => {
           linkToApp={false}
           supportsEns={false}
           width={'xl'}
-          onError={(error) => {
-            // eslint-disable-next-line no-console
-            console.error(error)
-          }}
-          onSuccess={() => {
-            // TODO: go to search/view split once we get address back
+          onSuccess={({ address }) => {
+            // TODO: delay first?
+            setValue('address', address)
+            setTab('search')
           }}
         />
       </TabsContent>
       <TabsContent value="search">
-        <SearchSplit />
+        <SearchSplit
+          splitAddress={searchSplitAddress}
+          control={control}
+          setValue={setValue}
+          setError={setError}
+        />
       </TabsContent>
     </Tabs>
   )
@@ -90,18 +117,18 @@ const ConnectedPage = () => {
   return <div>You are connected!</div>
 }
 
-const SearchSplit = () => {
+const SearchSplit = ({
+  splitAddress,
+  control,
+  setValue,
+  setError,
+}: {
+  splitAddress: string
+  control: Control<SearchSplitForm>
+  setValue: UseFormSetValue<SearchSplitForm>
+  setError: UseFormSetError<SearchSplitForm>
+}) => {
   const { chain, chainId } = useAccount()
-  const { control, watch, setValue, setError } = useForm<{
-    address: string
-  }>({
-    mode: 'onChange',
-    defaultValues: {
-      address: '',
-    },
-  })
-
-  const splitAddress = watch('address')
 
   const isAddressValid = (address: string) => {
     if (!address) return 'Required'
