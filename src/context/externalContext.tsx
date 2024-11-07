@@ -18,32 +18,13 @@ import {
 } from '@rainbow-me/rainbowkit/wallets'
 import { merge } from 'lodash'
 import { WagmiProvider } from 'wagmi'
-import {
-  arbitrum,
-  base,
-  bsc,
-  gnosis,
-  mainnet,
-  optimism,
-  polygon,
-  zora,
-} from 'wagmi/chains'
+
+import { SUPPORTED_CHAINS } from '~/constants/chains'
 
 // This id should always exist, throw error otherwise
 const walletConnectProjectId = process.env.WALLETCONNECT_PROJECT_ID
 if (!walletConnectProjectId)
   throw new Error('Walletconnect project id required')
-
-const SUPPORTED_CHAINS = [
-  mainnet,
-  polygon,
-  optimism,
-  arbitrum,
-  base,
-  bsc,
-  gnosis,
-  zora,
-] as const
 
 const config = getDefaultConfig({
   // Rainbow settings

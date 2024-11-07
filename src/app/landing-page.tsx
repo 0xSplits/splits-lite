@@ -21,6 +21,7 @@ import { useAccount, usePublicClient, useWalletClient } from 'wagmi'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
 import { Tabs, TabsContent } from '~/components/ui/tabs'
+import { ERC_20_TOKEN_LIST_BY_CHAIN } from '~/constants/erc20'
 
 export default function Home() {
   const { address, isConnecting } = useAccount()
@@ -113,8 +114,6 @@ const ConnectedPage = () => {
       </TabsContent>
     </Tabs>
   )
-
-  return <div>You are connected!</div>
 }
 
 const SearchSplit = ({
@@ -134,6 +133,8 @@ const SearchSplit = ({
     if (!address) return 'Required'
     return isAddress(address) || 'Invalid address'
   }
+
+  const erc20TokenList = ERC_20_TOKEN_LIST_BY_CHAIN[chainId!]
 
   return (
     <form style={{ width: '36rem' }}>
@@ -155,6 +156,7 @@ const SearchSplit = ({
           <DisplaySplit
             chainId={chainId!}
             address={splitAddress}
+            erc20TokenList={erc20TokenList}
             displayBalances={true}
             displayChain={false}
             linkToApp={false}
