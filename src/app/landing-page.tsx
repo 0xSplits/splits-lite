@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 import {
   CreateSplit,
-  DisplaySplit,
+  DisplaySplitViaProvider,
   useSplitsClient,
 } from '@0xsplits/splits-kit'
 import { AddressInput } from '@0xsplits/splits-kit/inputs'
@@ -153,7 +153,7 @@ const SearchSplit = ({
           />
         </div>
         {isAddress(splitAddress) && (
-          <DisplaySplit
+          <DisplaySplitViaProvider
             chainId={chainId!}
             address={splitAddress}
             erc20TokenList={erc20TokenList}
@@ -161,9 +161,7 @@ const SearchSplit = ({
             displayChain={false}
             linkToApp={false}
             shouldWithdrawOnDistribute={true}
-            options={{
-              requireDataClient: false,
-            }}
+            useCache={true}
             width={'xl'}
           />
         )}
