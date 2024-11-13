@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 import {
   CreateSplit,
@@ -16,11 +16,20 @@ import {
   UseFormSetError,
   UseFormSetValue,
 } from 'react-hook-form'
-import { isAddress, zeroAddress } from 'viem'
+import {
+  Chain,
+  createPublicClient,
+  http,
+  isAddress,
+  PublicClient,
+  Transport,
+  zeroAddress,
+} from 'viem'
 import { useAccount, usePublicClient, useWalletClient } from 'wagmi'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
 import { Tabs, TabsContent } from '~/components/ui/tabs'
+import { RPC_URLS_MAP } from '~/constants/chains'
 import { ERC_20_TOKEN_LIST_BY_CHAIN } from '~/constants/erc20'
 
 export default function Home() {
@@ -74,7 +83,26 @@ const ConnectedPage = () => {
   })
   const searchSplitAddress = watch('address')
 
-  useSplitsClient({ chainId: chainId ?? 1, publicClient, walletClient })
+  const defaultPublicClients = useMemo(() => {
+    return Object.entries(RPC_URLS_MAP).reduce(
+      (acc, [chainId, rpcData]) => {
+        const key = Number(chainId)
+        acc[key] = createPublicClient({
+          chain: rpcData.chain,
+          transport: http(rpcData.url),
+        }) as PublicClient<Transport, Chain>
+        return acc
+      },
+      {} as { [chainId: number]: PublicClient<Transport, Chain> },
+    )
+  }, [])
+
+  useSplitsClient({
+    chainId: chainId ?? 1,
+    publicClient,
+    walletClient,
+    publicClients: defaultPublicClients,
+  })
 
   if (!chain || !chainId) return <UnsupportedNetwork />
 

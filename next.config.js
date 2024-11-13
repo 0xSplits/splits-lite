@@ -3,6 +3,7 @@ module.exports = {
   trailingSlash: true,
   env: {
     WALLETCONNECT_PROJECT_ID: process.env.WALLETCONNECT_PROJECT_ID,
+    ALCHEMY_API_KEY: process.env.ALCHEMY_API_KEY,
   },
   images: {
     remotePatterns: [
