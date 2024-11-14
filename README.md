@@ -3,9 +3,10 @@ A minimal app for creating and distributing Splits
 
 ## Getting Started
 
-First, run the development server:
+Install all dependencies and then run the development server:
 
 ```bash
+pnpm install
 pnpm dev
 ```
 
