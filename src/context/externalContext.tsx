@@ -77,7 +77,7 @@ const RainbowDisclaimer: DisclaimerComponent = ({
     <Text>
       <span>
         <span className="font-semibold">Using a Gnosis Safe? </span> Use the{' '}
-        <Link href="https://gnosis-safe.io/app/eth:0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be/apps">
+        <Link href="https://app.safe.global/welcome/accounts">
           0xSplits Gnosis app
         </Link>{' '}
         or connect using{' '}
@@ -92,23 +92,25 @@ const RainbowDisclaimer: DisclaimerComponent = ({
 
 const customLightTheme = merge(
   lightTheme({
-    borderRadius: 'small',
+    accentColor: '#3B82F6',
+    borderRadius: 'medium',
     fontStack: 'system',
   }),
   {
     fonts: {
-      body: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+      body: 'Arial, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
     },
   } as Theme,
 )
 const customDarkTheme = merge(
   darkTheme({
-    borderRadius: 'small',
+    accentColor: '#3B82F6',
+    borderRadius: 'medium',
     fontStack: 'system',
   }),
   {
     fonts: {
-      body: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+      body: 'Arial, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
     },
   } as Theme,
 )

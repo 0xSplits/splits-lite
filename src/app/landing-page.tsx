@@ -38,24 +38,51 @@ export default function Home() {
   if (isConnecting) return <LoadingIndicator />
 
   return (
-    <div className="p-4">
+    <div className="space-y-8 p-4">
       <div className="flex items-end justify-end">
         <ConnectButton showBalance={false} chainStatus={'icon'} />
       </div>
-      <div className="items-center justify-items-center p-8 pb-20 sm:p-20">
+      <div className="items-center justify-items-center pb-16">
         {address ? <ConnectedPage /> : <LandingPage />}
       </div>
     </div>
   )
 }
 
+const ExternalLink = ({ url, text }: { url: string; text: string }) => {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      className="rounded border border-gray-200 bg-gray-50 px-3 py-1 text-center hover:bg-gray-100 md:text-left dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-800"
+    >
+      {text}
+    </a>
+  )
+}
+
 const LandingPage = () => {
   return (
-    <div className="flex flex-col items-center space-y-4 sm:items-start">
-      <div className="text-xl">Splits Lite</div>
-      <div className="text-md">
+    <div className="max-w-prose space-y-4">
+      <div className="text-4xl">Splits Lite</div>
+      <p className="text-lg text-gray-600 dark:text-gray-400">
         A minimal app for creating and distributing Splits. Connect your wallet
         to continue.
+      </p>
+      <div className="flex flex-col space-y-4 md:flex-row md:items-center md:space-x-4 md:space-y-0">
+        <ExternalLink
+          url="https://github.com/0xSplits/splits-lite/tree/main"
+          text="View on Github"
+        />
+        <ExternalLink
+          url="https://github.com/0xSplits/splits-lite/blob/main/src/constants/chains.ts"
+          text="Supported chains"
+        />
+        <ExternalLink
+          url="https://github.com/0xSplits/splits-lite/blob/main/src/constants/erc20.ts"
+          text="Supported tokens"
+        />
       </div>
     </div>
   )
@@ -167,12 +194,12 @@ const SearchSplit = ({
   return (
     <form style={{ width: '36rem' }}>
       <div className="flex flex-col space-y-4">
-        <div className="w-full">
+        <div className="w-full space-y-2">
           <label>Split address on {chain?.name}</label>
           <AddressInput
             control={control}
             inputName={'address'}
-            placeholder={'0x'}
+            placeholder={'0x...'}
             setValue={setValue}
             setError={setError}
             validationFunc={isAddressValid}

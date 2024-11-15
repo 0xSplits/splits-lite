@@ -54,7 +54,7 @@ const TabsTrigger = React.forwardRef<
     ref={ref}
     disabled={isDisabled}
     className={cn(
-      'border-b-2 px-1 pb-2 text-base font-medium outline-none data-[state=active]:border-black data-[state=inactive]:border-transparent data-[state=inactive]:text-gray-500 data-[state=active]:dark:border-white data-[state=inactive]:dark:text-gray-500',
+      '-mb-px border-b-2 px-2 pb-2 text-2xl outline-none data-[state=active]:border-black data-[state=inactive]:border-transparent data-[state=inactive]:text-gray-500 data-[state=active]:dark:border-white data-[state=inactive]:dark:text-gray-500',
       {
         'data-[state=inactive]:hover:text-black data-[state=inactive]:dark:hover:text-white':
           !isDisabled,
