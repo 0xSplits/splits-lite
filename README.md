@@ -34,7 +34,7 @@ To add a new Chain to Splits Lite, please follow these steps:
 1. Ensure the following requirements are met:
     - [CreateX](https://createx.rocks/) support.
     - Complete OP code compatibility with evm version `Shanghai`.
-    - Chain should be supported by viem.
+    - Chain should be supported by [viem](https://viem.sh/docs/chains/introduction#chains).
     - Alchemy support is recommended for a better user experience. Without an Alchemy or its equivalent RPC support indexing can be slow leading to degraded user experience.
 2. Send the minimum amount of native gas token to `0x60C65c9a8674DA22e89C7d09e839908B9f0ecC3a`
     - Please refer to the gas cost of [this](https://etherscan.io/tx/0x20e8da208491560c658a25dcaa2bf37f94f26ccb4d5caaac4a346b2152818513) transaction to calculate the minimum amount of native gas required.
