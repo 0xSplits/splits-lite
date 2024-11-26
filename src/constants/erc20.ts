@@ -6,6 +6,7 @@ import {
   mainnet,
   optimism,
   polygon,
+  shape,
   zora,
 } from 'viem/chains'
 
@@ -54,4 +55,7 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   [gnosis.id]: [],
   [bsc.id]: [],
   [zora.id]: [],
+  [shape.id]: [
+    '0x4200000000000000000000000000000000000006', // WETH
+  ],
 }

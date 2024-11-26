@@ -7,6 +7,7 @@ import {
   optimism,
   polygon,
   zora,
+  shape,
 } from 'viem/chains'
 
 export const SUPPORTED_CHAINS = [
@@ -18,6 +19,7 @@ export const SUPPORTED_CHAINS = [
   bsc,
   gnosis,
   zora,
+  shape,
 ] as const
 
 export const RPC_URLS_MAP = process.env.ALCHEMY_API_KEY
@@ -49,6 +51,10 @@ export const RPC_URLS_MAP = process.env.ALCHEMY_API_KEY
       [bsc.id]: {
         chain: bsc,
         url: `https://bnb-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
+      },
+      [shape.id]: {
+        chain: shape,
+        url: `https://shape-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
       },
     }
   : ({} as const)
