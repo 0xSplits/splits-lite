@@ -147,6 +147,7 @@ const ConnectedPage = () => {
         <CreateSplit
           chainId={chainId}
           type={'v2Push'}
+          defaultDistributorFee={0}
           defaultOwner={zeroAddress}
           defaultDistributorFeeOptions={[]}
           linkToApp={false}
