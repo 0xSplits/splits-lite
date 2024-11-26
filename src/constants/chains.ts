@@ -22,6 +22,7 @@ export const SUPPORTED_CHAINS = [
   shape,
 ] as const
 
+// note: To add support for a new chain please enable the chain on the `splits-lite` app on alchemy.
 export const RPC_URLS_MAP = process.env.ALCHEMY_API_KEY
   ? {
       [mainnet.id]: {
