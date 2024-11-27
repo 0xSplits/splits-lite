@@ -158,6 +158,7 @@ const ConnectedPage = () => {
             setValue('address', address)
             setTab('search')
           }}
+          displayChain={false}
         />
       </TabsContent>
       <TabsContent value="search">
