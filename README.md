@@ -13,9 +13,9 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Contributions
+## Supporting New Tokens and Chains
 
-### ERC20
+### Tokens
 
 To add a new ERC20 to Splits Lite, open a pull request with the following information:
 
@@ -27,7 +27,7 @@ network. Include the token symbol as a comment next to it.
 
 View example pull request [here](https://github.com/0xSplits/splits-lite/pull/9)
 
-### Chain
+### Chains
 
 To add a new Chain to Splits Lite, please follow these steps:
 
