@@ -8,6 +8,7 @@ import {
   polygon,
   shape,
   zora,
+  worldchain,
 } from 'viem/chains'
 
 export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
@@ -56,6 +57,9 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   [bsc.id]: [],
   [zora.id]: [],
   [shape.id]: [
+    '0x4200000000000000000000000000000000000006', // WETH
+  ],
+  [worldchain.id]: [
     '0x4200000000000000000000000000000000000006', // WETH
   ],
 }

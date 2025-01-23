@@ -8,6 +8,7 @@ import {
   polygon,
   zora,
   shape,
+  worldchain,
 } from 'viem/chains'
 
 export const SUPPORTED_CHAINS = [
@@ -20,6 +21,7 @@ export const SUPPORTED_CHAINS = [
   gnosis,
   zora,
   shape,
+  worldchain,
 ] as const
 
 // note: To add support for a new chain please enable the chain on the `splits-lite` app on alchemy.
@@ -56,6 +58,10 @@ export const RPC_URLS_MAP = process.env.ALCHEMY_API_KEY
       [shape.id]: {
         chain: shape,
         url: `https://shape-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
+      },
+      [worldchain.id]: {
+        chain: worldchain,
+        url: `https://worldchain-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
       },
     }
   : ({} as const)
