@@ -9,6 +9,7 @@ import {
   zora,
   shape,
   worldchain,
+  plumeMainnet,
 } from 'viem/chains'
 
 export const SUPPORTED_CHAINS = [
@@ -22,6 +23,7 @@ export const SUPPORTED_CHAINS = [
   zora,
   shape,
   worldchain,
+  plumeMainnet,
 ] as const
 
 // note: To add support for a new chain please enable the chain on the `splits-lite` app on alchemy.
@@ -62,6 +64,10 @@ export const RPC_URLS_MAP = process.env.ALCHEMY_API_KEY
       [worldchain.id]: {
         chain: worldchain,
         url: `https://worldchain-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
+      },
+      [plumeMainnet.id]: {
+        chain: plumeMainnet,
+        url: `https://phoenix-rpc.plumenetwork.xyz`,
       },
     }
   : ({} as const)
