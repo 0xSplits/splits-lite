@@ -12,6 +12,8 @@ import {
   plumeMainnet,
   abstract,
   abstractTestnet,
+  ronin,
+  saigon,
 } from 'viem/chains'
 
 export const SUPPORTED_CHAINS = [
@@ -28,6 +30,8 @@ export const SUPPORTED_CHAINS = [
   plumeMainnet,
   abstract,
   abstractTestnet,
+  ronin,
+  saigon,
 ] as const
 
 // note: To add support for a new chain please enable the chain on the `splits-lite` app on alchemy.
@@ -80,6 +84,14 @@ export const RPC_URLS_MAP = process.env.ALCHEMY_API_KEY
       [abstractTestnet.id]: {
         chain: abstractTestnet,
         url: `https://abstract-testnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
+      },
+      [ronin.id]: {
+        chain: ronin,
+        url: `https://ronin-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
+      },
+      [saigon.id]: {
+        chain: saigon,
+        url: `https://ronin-saigon.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
       },
     }
   : ({} as const)
