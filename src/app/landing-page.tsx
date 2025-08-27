@@ -2,29 +2,12 @@
 
 import React, { useMemo, useState } from 'react'
 
-import {
-  CreateSplit,
-  DisplaySplitViaProvider,
-  useSplitsClient,
-} from '@0xsplits/splits-kit'
+import { CreateSplit, DisplaySplitViaProvider, useSplitsClient } from '@0xsplits/splits-kit'
 import { AddressInput } from '@0xsplits/splits-kit/inputs'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import Link from 'next/link'
-import {
-  Control,
-  useForm,
-  UseFormSetError,
-  UseFormSetValue,
-} from 'react-hook-form'
-import {
-  Chain,
-  createPublicClient,
-  http,
-  isAddress,
-  PublicClient,
-  Transport,
-  zeroAddress,
-} from 'viem'
+import { Control, useForm, UseFormSetError, UseFormSetValue } from 'react-hook-form'
+import { Chain, createPublicClient, http, isAddress, PublicClient, Transport, zeroAddress } from 'viem'
 import { useAccount, usePublicClient, useWalletClient } from 'wagmi'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
@@ -42,9 +25,7 @@ export default function Home() {
       <div className="flex items-end justify-end">
         <ConnectButton showBalance={false} chainStatus={'icon'} />
       </div>
-      <div className="items-center justify-items-center pb-16">
-        {address ? <ConnectedPage /> : <LandingPage />}
-      </div>
+      <div className="items-center justify-items-center pb-16">{address ? <ConnectedPage /> : <LandingPage />}</div>
     </div>
   )
 }
@@ -67,14 +48,10 @@ const LandingPage = () => {
     <div className="max-w-prose space-y-4">
       <div className="text-4xl">Splits Lite</div>
       <p className="text-lg text-gray-600 dark:text-gray-400">
-        A minimal app for creating and distributing Splits. Connect your wallet
-        to continue.
+        A minimal app for creating and distributing Splits. Connect your wallet to continue.
       </p>
       <div className="flex flex-col space-y-4 md:flex-row md:items-center md:space-x-4 md:space-y-0">
-        <ExternalLink
-          url="https://github.com/0xSplits/splits-lite/tree/main"
-          text="View on Github"
-        />
+        <ExternalLink url="https://github.com/0xSplits/splits-lite/tree/main" text="View on Github" />
         <ExternalLink
           url="https://github.com/0xSplits/splits-lite/blob/main/src/constants/chains.ts"
           text="Supported chains"
@@ -162,12 +139,7 @@ const ConnectedPage = () => {
         />
       </TabsContent>
       <TabsContent value="search">
-        <SearchSplit
-          splitAddress={searchSplitAddress}
-          control={control}
-          setValue={setValue}
-          setError={setError}
-        />
+        <SearchSplit splitAddress={searchSplitAddress} control={control} setValue={setValue} setError={setError} />
       </TabsContent>
     </Tabs>
   )
@@ -232,18 +204,12 @@ const UnsupportedNetwork = () => {
     <div className="flex flex-col items-center space-y-4 sm:items-start">
       <div className="text-xl">This chain isn&apos;t supported.</div>
       <div className="text-md">
-        <Link
-          href="https://docs.splits.org"
-          target="_blank"
-          className="text-blue-400 underline hover:text-blue-700"
-        >
+        <Link href="https://docs.splits.org" target="_blank" className="text-blue-400 underline hover:text-blue-700">
           Here
         </Link>{' '}
         is a list of supported chains
       </div>
-      <div className="text-md">
-        Email us at support@splits.org to request support for a new chain.
-      </div>
+      <div className="text-md">Email us at support@splits.org to request support for a new chain.</div>
     </div>
   )
 }

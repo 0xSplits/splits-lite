@@ -33,9 +33,7 @@ const TabsList = React.forwardRef<
 >(({ ...props }, ref) => (
   <TabsPrimitive.List
     ref={ref}
-    className={cn(
-      'flex items-center space-x-6 border-b border-gray-200 dark:border-gray-700',
-    )}
+    className={cn('flex items-center space-x-6 border-b border-gray-200 dark:border-gray-700')}
     {...props}
   />
 ))
@@ -43,10 +41,7 @@ TabsList.displayName = TabsPrimitive.List.displayName
 
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
-  Omit<
-    React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>,
-    'disabled'
-  > & {
+  Omit<React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>, 'disabled'> & {
     isDisabled?: boolean
   }
 >(({ isDisabled, ...props }, ref) => (
@@ -56,8 +51,7 @@ const TabsTrigger = React.forwardRef<
     className={cn(
       '-mb-px border-b-2 px-2 pb-2 text-2xl outline-none data-[state=active]:border-black data-[state=inactive]:border-transparent data-[state=inactive]:text-gray-500 data-[state=active]:dark:border-white data-[state=inactive]:dark:text-gray-500',
       {
-        'data-[state=inactive]:hover:text-black data-[state=inactive]:dark:hover:text-white':
-          !isDisabled,
+        'data-[state=inactive]:hover:text-black data-[state=inactive]:dark:hover:text-white': !isDisabled,
       },
     )}
     {...props}

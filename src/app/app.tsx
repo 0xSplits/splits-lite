@@ -8,20 +8,13 @@ import { SplitsProvider } from '@0xsplits/splits-kit'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import LoadingIndicator from '~/components/LoadingIndicator'
-import {
-  RainbowProvider,
-  WagmiProviderWrapper,
-} from '~/context/externalContext'
+import { RainbowProvider, WagmiProviderWrapper } from '~/context/externalContext'
 
 import '@0xsplits/splits-kit/styles.css'
 
 const queryClient = new QueryClient()
 
-export default function App({
-  children,
-}: {
-  children: ReactNode
-}): JSX.Element {
+export default function App({ children }: { children: ReactNode }): JSX.Element {
   return (
     <>
       <QueryClientProvider client={queryClient}>

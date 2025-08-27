@@ -1,17 +1,17 @@
 # splits-lite
 
-A minimal app for creating and distributing Splits
+A minimal react app for creating and distributing Splits.
 
 ## Getting Started
 
-Install all dependencies and then run the development server:
+Create your own `.env.local` based on `.env.sample`, and then install [bun] and
+all dependencies in order to run the development server reachable at
+[http://localhost:3000](http://localhost:3000).
 
 ```bash
-pnpm install
-pnpm dev
+bun install
+bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Supporting New Tokens and Chains
 
@@ -44,3 +44,5 @@ To add a new Chain to Splits Lite, please follow these steps:
    - Any docs referencing the Chain. Ex [Base](https://docs.base.org/docs/)
 
 If you have any questions or need any help with any of the steps above feel free to open an issue or reach out to us at `support@splits.org`.
+
+[bun]: https://bun.sh/docs/installation
