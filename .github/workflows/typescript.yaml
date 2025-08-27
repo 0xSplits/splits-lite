@@ -14,10 +14,12 @@ jobs:
         with:
           node-version: '22.x.x'
 
-      - name: 'Install Typescript Dependencies'
+      - name: 'Install Package Manager'
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: '1.2.21'
+
+      - name: 'Install Typescript Dependencies'
         run: |
           bun install
           bun install prettier --global
