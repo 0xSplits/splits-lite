@@ -1,9 +1,9 @@
 import React from 'react'
 
 import App from '~/app/app'
+import '~/app/globals.css'
 
 import type { Metadata } from 'next'
-import '~/app/globals.css'
 
 const TITLE = 'Splits Lite'
 const DESCRIPTION = 'A minimal app for creating and distributing Splits'

@@ -19,29 +19,29 @@ import {
 import { merge } from 'lodash'
 import { WagmiProvider } from 'wagmi'
 
+import { Env } from '~/app/lib/env'
 import { SUPPORTED_CHAINS } from '~/constants/chains'
-import { WALLETCONNECT_PROJECT_ID } from '~/constants/config'
 
-const config = getDefaultConfig({
-  // Rainbow settings
-  appName: 'Splits Lite',
-  appDescription: 'A minimal app for creating and distributing Splits',
-  appUrl: 'https://lite.splits.org',
-  appIcon: 'https://lite.splits.org/favicon.ico',
-  wallets: [
-    {
-      groupName: 'Wallets',
-      wallets: [injectedWallet, metaMaskWallet, coinbaseWallet, walletConnectWallet, rainbowWallet, safeWallet],
-    },
-  ],
-  projectId: WALLETCONNECT_PROJECT_ID,
-  // Wagmi settings
-  ssr: true, // TODO: cookie storage? https://wagmi.sh/react/guides/ssr
-  chains: SUPPORTED_CHAINS,
-  pollingInterval: 20_000,
-})
+export const WagmiProviderWrapper = ({ children, env }: { children: JSX.Element; env: Env }) => {
+  const config = getDefaultConfig({
+    // Rainbow settings
+    appName: 'Splits Lite',
+    appDescription: 'A minimal app for creating and distributing Splits',
+    appUrl: 'https://lite.splits.org',
+    appIcon: 'https://lite.splits.org/favicon.ico',
+    wallets: [
+      {
+        groupName: 'Wallets',
+        wallets: [injectedWallet, metaMaskWallet, coinbaseWallet, walletConnectWallet, rainbowWallet, safeWallet],
+      },
+    ],
+    projectId: env.WALLETCONNECT_PROJECT_ID,
+    // Wagmi settings
+    ssr: true, // TODO: cookie storage? https://wagmi.sh/react/guides/ssr
+    chains: SUPPORTED_CHAINS,
+    pollingInterval: 20_000,
+  })
 
-export const WagmiProviderWrapper = ({ children }: { children: JSX.Element }) => {
   return <WagmiProvider config={config}>{children}</WagmiProvider>
 }
 
