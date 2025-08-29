@@ -1,15 +1,4 @@
-import {
-  arbitrum,
-  base,
-  bsc,
-  gnosis,
-  mainnet,
-  optimism,
-  polygon,
-  shape,
-  zora,
-  worldchain,
-} from 'viem/chains'
+import { arbitrum, base, bsc, gnosis, mainnet, optimism, polygon, shape, zora, worldchain } from 'viem/chains'
 
 export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   [mainnet.id]: [

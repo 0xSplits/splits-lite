@@ -1,0 +1,44 @@
+name: 'typescript'
+
+on: 'push'
+
+jobs:
+  typescript:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Setup Git Project'
+        uses: 'actions/checkout@v5'
+
+      - name: 'Setup Typescript Env'
+        uses: 'actions/setup-node@v4'
+        with:
+          node-version: '22.x.x'
+
+      - name: 'Install Package Manager'
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.2.21'
+
+      - name: 'Install Typescript Dependencies'
+        run: |
+          bun install
+          bun install prettier --global
+
+      - name: 'Check Git Project'
+        run: |
+          if [[ $(git status --porcelain) ]]; then
+            echo "found dirty files"
+            exit 1
+          fi
+
+      - name: 'Check Typescript Formatter'
+        run: |
+          prettier -c $(find ./src -name "*.ts" -o -name "*.tsx")
+
+      - name: 'Check Typescript Linter'
+        run: |
+          bun run lint
+
+      - name: 'Build Typescript Project'
+        run: |
+          bun run build
