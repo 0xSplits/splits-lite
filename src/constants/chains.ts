@@ -14,6 +14,7 @@ import {
   abstractTestnet,
   ronin,
   saigon,
+  celo,
 } from 'viem/chains'
 
 export const SUPPORTED_CHAINS = [
@@ -32,6 +33,7 @@ export const SUPPORTED_CHAINS = [
   abstractTestnet,
   ronin,
   saigon,
+  celo,
 ] as const
 
 // note: To add support for a new chain please enable the chain on the `splits-lite` app on alchemy.
@@ -92,6 +94,10 @@ export const rpcUrl = (key: string) => {
     [saigon.id]: {
       chain: saigon,
       url: `https://ronin-saigon.g.alchemy.com/v2/${key}`,
+    },
+    [celo.id]: {
+      chain: celo,
+      url: `https://celo-mainnet.g.alchemy.com/v2/${key}`,
     },
   }
 }

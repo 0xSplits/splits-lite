@@ -1,4 +1,4 @@
-import { arbitrum, base, bsc, gnosis, mainnet, optimism, polygon, shape, zora, worldchain } from 'viem/chains'
+import { arbitrum, base, bsc, gnosis, mainnet, optimism, polygon, shape, zora, worldchain, celo } from 'viem/chains'
 
 export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   [mainnet.id]: [
@@ -50,5 +50,8 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   ],
   [worldchain.id]: [
     '0x4200000000000000000000000000000000000006', // WETH
+  ],
+  [celo.id]: [
+    '0xcebA9300f2b948710d2653dD7B07f33A8B32118C', // USDC
   ],
 }
