@@ -5,7 +5,7 @@ import '~/app/globals.css'
 
 import type { Metadata } from 'next'
 
-const TITLE = 'Splits Lite'
+const TITLE = 'Splits Lite (Fancy Feature Branch)'
 const DESCRIPTION = 'A minimal app for creating and distributing Splits'
 
 const OG_IMAGE_SIZE = {
