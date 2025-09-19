@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-blue-300">
+      <body className="bg-sky-300">
         <App>{children}</App>
       </body>
     </html>
