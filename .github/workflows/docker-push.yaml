@@ -18,7 +18,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - name: 'Authorize Container Registry'
-        uses: 'docker/login-action@v3.5.0'
+        uses: 'docker/login-action@v3.6.0'
         with:
           registry: '${{ secrets.AWS_ACCOUNT_NUMBER }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com'
           username: '${{ secrets.AWS_ACCESS_KEY_ID }}'
