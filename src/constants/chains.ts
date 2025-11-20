@@ -1,8 +1,10 @@
 import {
   arbitrum,
+  avalanche,
   base,
   bsc,
   gnosis,
+  hoodi,
   mainnet,
   optimism,
   polygon,
@@ -34,6 +36,8 @@ export const SUPPORTED_CHAINS = [
   ronin,
   saigon,
   celo,
+  avalanche,
+  hoodi,
 ] as const
 
 // note: To add support for a new chain please enable the chain on the `splits-lite` app on alchemy.
@@ -98,6 +102,14 @@ export const rpcUrl = (key: string) => {
     [celo.id]: {
       chain: celo,
       url: `https://celo-mainnet.g.alchemy.com/v2/${key}`,
+    },
+    [avalanche.id]: {
+      chain: avalanche,
+      url: `https://avax-mainnet.g.alchemy.com/v2/${key}`,
+    },
+    [hoodi.id]: {
+      chain: hoodi,
+      url: `https://eth-hoodi.g.alchemy.com/v2/${key}`,
     },
   }
 }
