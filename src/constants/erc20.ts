@@ -1,4 +1,18 @@
-import { arbitrum, base, bsc, gnosis, mainnet, optimism, polygon, shape, zora, worldchain, celo } from 'viem/chains'
+import {
+  arbitrum,
+  avalanche,
+  base,
+  bsc,
+  gnosis,
+  hoodi,
+  mainnet,
+  optimism,
+  polygon,
+  shape,
+  zora,
+  worldchain,
+  celo,
+} from 'viem/chains'
 
 export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   [mainnet.id]: [
@@ -54,4 +68,8 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   [celo.id]: [
     '0xcebA9300f2b948710d2653dD7B07f33A8B32118C', // USDC
   ],
+  [avalanche.id]: [
+    '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', // USDC
+  ],
+  [hoodi.id]: [],
 }
