@@ -52,7 +52,7 @@ const ExternalLink = ({ url, text }: { url: string; text: string }) => {
 const LandingPage = () => {
   return (
     <div className="max-w-prose space-y-4">
-      <div className="text-4xl">Splits Lite</div>
+      <div className="text-4xl">Splits Lite (fancy-feature-branch)</div>
       <p className="text-lg text-gray-600 dark:text-gray-400">
         A minimal app for creating and distributing Splits. Connect your wallet to continue.
       </p>
