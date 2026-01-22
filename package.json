@@ -21,7 +21,7 @@
     "react-hook-form": "^7.53.1",
     "tailwind-merge": "^2.5.4",
     "viem": "^2.44.4",
-    "wagmi": "^3.4.1"
+    "wagmi": "2.12.25"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.12",
