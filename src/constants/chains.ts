@@ -17,6 +17,7 @@ import {
   ronin,
   saigon,
   celo,
+  tempoModerato,
 } from 'viem/chains'
 
 export const SUPPORTED_CHAINS = [
@@ -36,6 +37,7 @@ export const SUPPORTED_CHAINS = [
   ronin,
   saigon,
   celo,
+  tempoModerato,
   avalanche,
   hoodi,
 ] as const
@@ -102,6 +104,10 @@ export const rpcUrl = (key: string) => {
     [celo.id]: {
       chain: celo,
       url: `https://celo-mainnet.g.alchemy.com/v2/${key}`,
+    },
+    [tempoModerato.id]: {
+      chain: tempoModerato,
+      url: 'https://rpc.moderato.tempo.xyz',
     },
     [avalanche.id]: {
       chain: avalanche,

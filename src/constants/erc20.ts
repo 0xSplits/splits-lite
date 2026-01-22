@@ -12,6 +12,7 @@ import {
   zora,
   worldchain,
   celo,
+  tempoModerato,
 } from 'viem/chains'
 
 export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
@@ -70,6 +71,12 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   ],
   [avalanche.id]: [
     '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', // USDC
+  ],
+  [tempoModerato.id]: [
+    '0x20c0000000000000000000000000000000000000',
+    '0x20c0000000000000000000000000000000000001',
+    '0x20c0000000000000000000000000000000000002',
+    '0x20c0000000000000000000000000000000000003',
   ],
   [hoodi.id]: [],
 }
