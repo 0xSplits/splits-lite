@@ -17,7 +17,18 @@ import {
   ronin,
   saigon,
   celo,
+  tempoModerato,
 } from 'viem/chains'
+
+const tempoModeratoWithMulticall = {
+  ...tempoModerato,
+  contracts: {
+    ...(tempoModerato.contracts ?? {}),
+    multicall3: {
+      address: '0xca11bde05977b3631167028862be2a173976ca11' as const,
+    },
+  },
+}
 
 export const SUPPORTED_CHAINS = [
   mainnet,
@@ -36,6 +47,7 @@ export const SUPPORTED_CHAINS = [
   ronin,
   saigon,
   celo,
+  tempoModeratoWithMulticall,
   avalanche,
   hoodi,
 ] as const
@@ -102,6 +114,10 @@ export const rpcUrl = (key: string) => {
     [celo.id]: {
       chain: celo,
       url: `https://celo-mainnet.g.alchemy.com/v2/${key}`,
+    },
+    [tempoModerato.id]: {
+      chain: tempoModeratoWithMulticall,
+      url: 'https://rpc.moderato.tempo.xyz',
     },
     [avalanche.id]: {
       chain: avalanche,
