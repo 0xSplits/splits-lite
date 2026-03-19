@@ -129,11 +129,11 @@ export const rpcUrl = (key: string) => {
     },
     [tempo.id]: {
       chain: tempoWithMulticall,
-      url: 'https://rpc.presto.tempo.xyz',
+      url: `https://tempo-mainnet.g.alchemy.com/v2/${key}`,
     },
     [tempoModerato.id]: {
       chain: tempoModeratoWithMulticall,
-      url: 'https://rpc.moderato.tempo.xyz',
+      url: `https://tempo-moderato.g.alchemy.com/v2/${key}`,
     },
     [avalanche.id]: {
       chain: avalanche,
