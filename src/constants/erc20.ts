@@ -12,6 +12,7 @@ import {
   zora,
   worldchain,
   celo,
+  tempo,
   tempoModerato,
 } from 'viem/chains'
 
@@ -71,6 +72,13 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   ],
   [avalanche.id]: [
     '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', // USDC
+  ],
+  [tempo.id]: [
+    '0x20c0000000000000000000000000000000000000', // pathUSD
+    '0x20c000000000000000000000b9537d11c60e8b50', // USDC.e
+    '0x20c0000000000000000000001621e21f71cf12fb', // EURC.e
+    '0x20c00000000000000000000014f22ca97301eb73', // USDT0
+    '0x20c00000000000000000000031f228af88888888', // stcUSD
   ],
   [tempoModerato.id]: [
     '0x20c0000000000000000000000000000000000000',
