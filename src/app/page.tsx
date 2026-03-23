@@ -27,7 +27,7 @@ export default function Page() {
   return (
     <div className="space-y-8 p-4">
       <div className="flex items-end justify-end">
-        <ConnectButton showBalance={false} chainStatus={'icon'} />
+        <ConnectButton showBalance={false} chainStatus={'full'} />
       </div>
       <div className="items-center justify-items-center pb-16">
         {address ? <ConnectedPage env={env} /> : <LandingPage />}

@@ -21,8 +21,44 @@ import {
   tempoModerato,
 } from 'viem/chains'
 
+const shapeWithIcon = {
+  ...shape,
+  iconUrl: '/chain-icons/shape.svg',
+}
+
+const worldchainWithIcon = {
+  ...worldchain,
+  iconUrl: '/chain-icons/worldchain.svg',
+}
+
+const plumeMainnetWithIcon = {
+  ...plumeMainnet,
+  iconUrl: '/chain-icons/plume.svg',
+}
+
+const abstractWithIcon = {
+  ...abstract,
+  iconUrl: '/chain-icons/abstract.svg',
+}
+
+const abstractTestnetWithIcon = {
+  ...abstractTestnet,
+  iconUrl: '/chain-icons/abstract.svg',
+}
+
+const roninWithIcon = {
+  ...ronin,
+  iconUrl: '/chain-icons/ronin.svg',
+}
+
+const saigonWithIcon = {
+  ...saigon,
+  iconUrl: '/chain-icons/ronin.svg',
+}
+
 const tempoWithMulticall = {
   ...tempo,
+  iconUrl: '/chain-icons/tempo.svg',
   contracts: {
     ...(tempo.contracts ?? {}),
     multicall3: {
@@ -33,12 +69,18 @@ const tempoWithMulticall = {
 
 const tempoModeratoWithMulticall = {
   ...tempoModerato,
+  iconUrl: '/chain-icons/tempo.svg',
   contracts: {
     ...(tempoModerato.contracts ?? {}),
     multicall3: {
       address: '0xca11bde05977b3631167028862be2a173976ca11' as const,
     },
   },
+}
+
+const hoodiWithIcon = {
+  ...hoodi,
+  iconUrl: '/chain-icons/hoodi.svg',
 }
 
 export const SUPPORTED_CHAINS = [
@@ -50,18 +92,18 @@ export const SUPPORTED_CHAINS = [
   bsc,
   gnosis,
   zora,
-  shape,
-  worldchain,
-  plumeMainnet,
-  abstract,
-  abstractTestnet,
-  ronin,
-  saigon,
+  shapeWithIcon,
+  worldchainWithIcon,
+  plumeMainnetWithIcon,
+  abstractWithIcon,
+  abstractTestnetWithIcon,
+  roninWithIcon,
+  saigonWithIcon,
   celo,
   tempoWithMulticall,
   tempoModeratoWithMulticall,
   avalanche,
-  hoodi,
+  hoodiWithIcon,
 ] as const
 
 // note: To add support for a new chain please enable the chain on the `splits-lite` app on alchemy.
@@ -96,31 +138,31 @@ export const rpcUrl = (key: string) => {
       url: `https://bnb-mainnet.g.alchemy.com/v2/${key}`,
     },
     [shape.id]: {
-      chain: shape,
+      chain: shapeWithIcon,
       url: `https://shape-mainnet.g.alchemy.com/v2/${key}`,
     },
     [worldchain.id]: {
-      chain: worldchain,
+      chain: worldchainWithIcon,
       url: `https://worldchain-mainnet.g.alchemy.com/v2/${key}`,
     },
     [plumeMainnet.id]: {
-      chain: plumeMainnet,
+      chain: plumeMainnetWithIcon,
       url: `https://phoenix-rpc.plumenetwork.xyz`,
     },
     [abstract.id]: {
-      chain: abstract,
+      chain: abstractWithIcon,
       url: `https://abstract-mainnet.g.alchemy.com/v2/${key}`,
     },
     [abstractTestnet.id]: {
-      chain: abstractTestnet,
+      chain: abstractTestnetWithIcon,
       url: `https://abstract-testnet.g.alchemy.com/v2/${key}`,
     },
     [ronin.id]: {
-      chain: ronin,
+      chain: roninWithIcon,
       url: `https://ronin-mainnet.g.alchemy.com/v2/${key}`,
     },
     [saigon.id]: {
-      chain: saigon,
+      chain: saigonWithIcon,
       url: `https://ronin-saigon.g.alchemy.com/v2/${key}`,
     },
     [celo.id]: {
@@ -140,7 +182,7 @@ export const rpcUrl = (key: string) => {
       url: `https://avax-mainnet.g.alchemy.com/v2/${key}`,
     },
     [hoodi.id]: {
-      chain: hoodi,
+      chain: hoodiWithIcon,
       url: `https://eth-hoodi.g.alchemy.com/v2/${key}`,
     },
   }
