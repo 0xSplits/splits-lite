@@ -43,7 +43,7 @@ jobs:
           fi
 
       - name: 'Push Docker Image'
-        uses: 'docker/build-push-action@v6.18.0'
+        uses: 'docker/build-push-action@v7.1.0'
         with:
           push: true
           tags: '${{ secrets.AWS_ACCOUNT_NUMBER }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ github.event.repository.name }}:${{ steps.image.outputs.tag }}'
