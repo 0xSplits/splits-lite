@@ -210,7 +210,7 @@ const UnsupportedNetwork = () => {
     <div className="flex flex-col items-center space-y-4 sm:items-start">
       <div className="text-xl">This chain isn&apos;t supported.</div>
       <div className="text-md">
-        <Link href="https://docs.splits.org" target="_blank" className="text-blue-400 underline hover:text-blue-700">
+        <Link href="https://splits.org/protocol/docs" target="_blank" className="text-blue-400 underline hover:text-blue-700">
           Here
         </Link>{' '}
         is a list of supported chains
