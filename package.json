@@ -48,9 +48,11 @@
     "typescript": "5.9.3"
   },
   "overrides": {
+    "qr": "0.5.5",
     "react-hook-form": "7.76.1"
   },
   "resolutions": {
+    "qr": "0.5.5",
     "react-hook-form": "7.76.1"
   }
 }
