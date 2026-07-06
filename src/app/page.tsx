@@ -211,7 +211,7 @@ const UnsupportedNetwork = () => {
       <div className="text-xl">This chain isn&apos;t supported.</div>
       <div className="text-md">
         <Link
-          href="https://splits.org/protocol/docs"
+          href="https://splits.org/protocol/docs/core/split-v2#addresses"
           target="_blank"
           className="text-blue-400 underline hover:text-blue-700"
         >
