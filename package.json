@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.85.0",
     "tailwind-merge": "^2.6.1",
-    "viem": "^2.55.13",
+    "viem": "^2.55.18",
     "wagmi": "2.19.5"
   },
   "devDependencies": {
