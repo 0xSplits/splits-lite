@@ -88,5 +88,7 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
     '0x20c0000000000000000000000000000000000003',
   ],
   [hoodi.id]: [],
-  [robinhood.id]: [],
+  [robinhood.id]: [
+    '0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168', // USDG
+  ],
 }
