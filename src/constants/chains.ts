@@ -19,7 +19,13 @@ import {
   celo,
   tempo,
   tempoModerato,
+  robinhood,
 } from 'viem/chains'
+
+const robinhoodWithIcon = {
+  ...robinhood,
+  iconUrl: '/chain-icons/robinhood.jpg',
+}
 
 const shapeWithIcon = {
   ...shape,
@@ -103,6 +109,7 @@ export const SUPPORTED_CHAINS = [
   tempoWithMulticall,
   tempoModeratoWithMulticall,
   avalanche,
+  robinhoodWithIcon,
   hoodiWithIcon,
 ] as const
 
@@ -180,6 +187,10 @@ export const rpcUrl = (key: string) => {
     [avalanche.id]: {
       chain: avalanche,
       url: `https://avax-mainnet.g.alchemy.com/v2/${key}`,
+    },
+    [robinhood.id]: {
+      chain: robinhoodWithIcon,
+      url: `https://robinhood-mainnet.g.alchemy.com/v2/${key}`,
     },
     [hoodi.id]: {
       chain: hoodiWithIcon,

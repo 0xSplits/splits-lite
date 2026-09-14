@@ -14,6 +14,7 @@ import {
   celo,
   tempo,
   tempoModerato,
+  robinhood,
 } from 'viem/chains'
 
 export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
@@ -87,4 +88,5 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
     '0x20c0000000000000000000000000000000000003',
   ],
   [hoodi.id]: [],
+  [robinhood.id]: [],
 }
