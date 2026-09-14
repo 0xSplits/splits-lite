@@ -3,7 +3,7 @@
 
 
 # The base image is the first cache layer. It is rarely changing.
-FROM node:22.23.2-bullseye-slim AS base
+FROM node:22.23.2-bookworm-slim AS base
 
 RUN corepack enable
 
