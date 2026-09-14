@@ -24,7 +24,7 @@ import {
 
 const robinhoodWithIcon = {
   ...robinhood,
-  iconUrl: '/chain-icons/robinhood.jpg',
+  iconUrl: '/chain-icons/robinhood.svg',
 }
 
 const shapeWithIcon = {
