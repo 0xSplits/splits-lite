@@ -20,11 +20,29 @@ import {
   tempo,
   tempoModerato,
   robinhood,
+  arc,
+  arcTestnet,
 } from 'viem/chains'
 
 const robinhoodWithIcon = {
   ...robinhood,
   iconUrl: '/chain-icons/robinhood.svg',
+}
+
+const arcWithMulticall = {
+  ...arc,
+  iconUrl: '/chain-icons/arc.svg',
+  contracts: {
+    ...(arc.contracts ?? {}),
+    multicall3: {
+      address: '0xca11bde05977b3631167028862be2a173976ca11' as const,
+    },
+  },
+}
+
+const arcTestnetWithIcon = {
+  ...arcTestnet,
+  iconUrl: '/chain-icons/arc.svg',
 }
 
 const shapeWithIcon = {
@@ -110,6 +128,8 @@ export const SUPPORTED_CHAINS = [
   tempoModeratoWithMulticall,
   avalanche,
   robinhoodWithIcon,
+  arcWithMulticall,
+  arcTestnetWithIcon,
   hoodiWithIcon,
 ] as const
 
@@ -191,6 +211,14 @@ export const rpcUrl = (key: string) => {
     [robinhood.id]: {
       chain: robinhoodWithIcon,
       url: `https://robinhood-mainnet.g.alchemy.com/v2/${key}`,
+    },
+    [arc.id]: {
+      chain: arcWithMulticall,
+      url: `https://arc-mainnet.g.alchemy.com/v2/${key}`,
+    },
+    [arcTestnet.id]: {
+      chain: arcTestnetWithIcon,
+      url: `https://rpc.testnet.arc.io`,
     },
     [hoodi.id]: {
       chain: hoodiWithIcon,

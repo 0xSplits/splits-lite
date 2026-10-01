@@ -15,6 +15,8 @@ import {
   tempo,
   tempoModerato,
   robinhood,
+  arc,
+  arcTestnet,
 } from 'viem/chains'
 
 export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
@@ -91,5 +93,13 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   [robinhood.id]: [
     '0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168', // USDG
     '0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73', // WETH
+  ],
+  [arc.id]: [
+    '0x3600000000000000000000000000000000000000', // USDC
+    '0xbEf5f6d51CB62b58e6A8f77868681825C6fe21c1', // EURC
+  ],
+  [arcTestnet.id]: [
+    '0x3600000000000000000000000000000000000000', // USDC
+    '0x89B50855Aa3bE2F677cD6303Cec089B5F319D72a', // EURC
   ],
 }
