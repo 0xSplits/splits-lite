@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@0xsplits/splits-kit": "2.5.0",
+    "@0xsplits/splits-kit": "2.6.0-alpha.0",
     "@radix-ui/react-tabs": "^1.1.21",
     "@rainbow-me/rainbowkit": "2.2.11",
     "@tanstack/react-query": "^5.102.8",
@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.88.0",
     "tailwind-merge": "^2.6.1",
-    "viem": "^2.56.5",
+    "viem": "^2.57.2",
     "wagmi": "2.19.5"
   },
   "devDependencies": {
