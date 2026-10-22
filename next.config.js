@@ -2,14 +2,6 @@ module.exports = {
   output: 'standalone',
   swcMinify: true,
   trailingSlash: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
-  },
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer
     maxInactiveAge: 120 * 1000,
