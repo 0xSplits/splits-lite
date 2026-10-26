@@ -70,6 +70,8 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
   [worldchain.id]: [
     '0x4200000000000000000000000000000000000006', // WETH
   ],
+  // Don't add CELO (0x471EcE3750Da237f93B8E339c536989b8978a438). It holds the
+  // same funds as the native balance, so it would show twice.
   [celo.id]: [
     '0xcebA9300f2b948710d2653dD7B07f33A8B32118C', // USDC
   ],
@@ -94,12 +96,13 @@ export const ERC_20_TOKEN_LIST_BY_CHAIN: { [key: number]: string[] } = {
     '0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168', // USDG
     '0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73', // WETH
   ],
+  // Don't add USDC (0x3600000000000000000000000000000000000000) on Arc or Arc
+  // Testnet. It holds the same funds as the native balance, so it would show
+  // twice.
   [arc.id]: [
-    '0x3600000000000000000000000000000000000000', // USDC
     '0xbEf5f6d51CB62b58e6A8f77868681825C6fe21c1', // EURC
   ],
   [arcTestnet.id]: [
-    '0x3600000000000000000000000000000000000000', // USDC
     '0x89B50855Aa3bE2F677cD6303Cec089B5F319D72a', // EURC
   ],
 }

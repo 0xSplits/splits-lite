@@ -21,6 +21,8 @@ To add a new ERC20 to Splits Lite, open a pull request with the following inform
 
 - Add the address to the [erc20.ts](/src/constants/erc20.ts) file. Make sure it's under the correct
   network. Include the token symbol as a comment next to it.
+- Don't add an ERC20 that holds the same funds as the network's native token, such as USDC on Arc or
+  CELO on Celo. Splits Lite already shows the native balance, so it would show twice.
 - Include a short description of the token in the PR description
 - Include a link to etherscan (or the appropriate block explorer for that network) in the PR description
 - Include any other relevant links (to project website, listing on coingecko, etc.) in the PR description
