@@ -12,7 +12,7 @@
     "@0xsplits/splits-kit": "2.6.0",
     "@radix-ui/react-tabs": "^1.2.1",
     "@rainbow-me/rainbowkit": "2.2.11",
-    "@tanstack/react-query": "^5.105.0",
+    "@tanstack/react-query": "^5.105.3",
     "clsx": "^2.1.1",
     "lodash": "^4.18.1",
     "next": "14.2.35",
@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.91.0",
     "tailwind-merge": "^2.6.1",
-    "viem": "^2.57.12",
+    "viem": "^2.57.15",
     "wagmi": "2.19.5"
   },
   "devDependencies": {
